@@ -3,9 +3,7 @@
 {% block content %}
    
 
-    {% if posts|length == 0 %}
-    <p>No posts added</p>
-    {% else %}
+   
 
         
             {% for post in posts %}
@@ -24,6 +22,7 @@
             <label>
                 <h1>Body: </h1> <p>{{post.body}}</p>
             </label>
+            
             <div>
                     <form method="POST" action="/delete-post" style="display:inline-block;">
                         <input type="hidden" name="post-id" value="{{post.id}}" >
@@ -38,7 +37,7 @@
             {% endfor %}
         
 
-    {% endif %}
+    
 
     <hr />
 
